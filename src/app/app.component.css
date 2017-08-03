@@ -48,11 +48,12 @@ section{
 }
 
 footer{
-    color: grey;
+    color: white;
     padding: 1%;
     margin-top: 30%;
     text-align: center;
     border-top:1px solid #eee;
+    background:rgba(224, 49, 55, 0.67);
 }
 
 .activado{

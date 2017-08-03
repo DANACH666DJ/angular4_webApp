@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="container">
+        <form class="form-horizontal" role="form" #formProducto="ngForm">
+            <div class="form-group">
+                <div class="col-lg-5  col-md-7 col-sm-9 col-xs-12">
+                    <label>Nombre:</label>
+                    <input type="text" class="form-control" name="nombre" placeholder="Introduce el nombre" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-5  col-md-7 col-sm-9 col-xs-12">
+                    <label>Descripción:</label>
+                    <textarea class="form-control" name="description" placeholder="Introduce la descripción" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-5  col-md-7 col-sm-9 col-xs-12">
+                    <label>Precio:</label>
+                    <input type="text" class="form-control" name="precio" placeholder="Introduce el precio" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-5  col-md-7 col-sm-9 col-xs-12">
+                    <label>Imagen:</label>
+                    <input type="file" class="form-control" name="imagen" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-5  col-md-7 col-sm-9 col-xs-12">
+                    <input type="submit" value="{{ title }}" class="btn btn-success" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

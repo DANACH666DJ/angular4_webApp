@@ -20,7 +20,7 @@
           <!--Directiva routerLinkActive para llamar a la clase activado y que se marque cada link al estar en el-->
           <a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a>
           <a [routerLink]="['/productos_list']" [routerLinkActive]="['activado']">Productos</a>
-          <a href="#">Crear producto</a>
+          <a [routerLink]="['/productos_add']" [routerLinkActive]="['activado']">Crear producto</a>
         </nav>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
 import { ProductosListComponent } from './components/productos_list.component';
+import { ProductoAddComponent } from './components/producto_add.component';
 
 //Array de ruyas con los componentes
 const appRoutes: Routes = [
@@ -12,6 +13,7 @@ const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'productos_list', component:  ProductosListComponent },
+    { path: 'productos_add', component:  ProductoAddComponent },
     //ruta por si falla y no existe la ruta
     { path: '**', component: ErrorComponent }
 ];

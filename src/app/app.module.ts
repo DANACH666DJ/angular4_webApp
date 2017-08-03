@@ -11,14 +11,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
 import { ProductosListComponent } from './components/productos_list.component';
-
+import { ProductoAddComponent } from './components/producto_add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ErrorComponent,
-    ProductosListComponent
+    ProductosListComponent,
+    ProductoAddComponent
   ],
   imports: [
     BrowserModule,
