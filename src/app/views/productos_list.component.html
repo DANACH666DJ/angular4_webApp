@@ -1,29 +1,73 @@
 <div class="container-fluid">
-    <div class="container">
+    <div *ngIf="!productos">
+        Cargando listado de productos...
+    </div>
+    <div *ngIf="productos">
         <div class="row">
-            <div class="col-lg-5  col-md-7 col-sm-9 col-xs-12">
-                <!--Creo una tabla para mostrar todos los artículos-->
-                <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th><strong>Id</strong></th>
-                            <th><strong>Name</strong></th>
-                            <th><strong>Description</strong></th>
-                            <th><strong>Price</strong></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let producto of productos;let i=index">
-                            <td>{{producto.id}}</td>
-                            <td>{{producto.nombre}}</td>
-                            <td>{{producto.description}}</td>
-                            <td>{{producto.precio}} €</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col-lg-3" *ngFor="let producto of productos">
+                <div class="thumbnail">
+                    <div *ngIf="producto.imagen" class="imagen_container">
+                        <img src="http://localhost/curso-angular4-backend/uploads/{{producto.imagen}}" class="producto_imagen img-responsive"  alt="img-responsive" />
+                    </div>
+                    <div *ngIf="!producto.imagen">
+                        <img src="./assets/no-photo.png" class="producto_imagen img-responsive" alt="img-responsive"/>
+                    </div>
+                    <div class="caption">
+                        <h3>{{producto.nombre}}</h3>
+                        <p>{{producto.description}}</p>
+                        <p>{{producto.precio}} €</p>
+                        <p>
+                            <a href="#" class="btn btn-md btn-info">Ver</a>
+                            <a href="#" class="btn btn-md btn-warning">Editar</a>
+                            <a href="#" class="btn btn-md btn-danger">Borrar</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+<!--
+     <div *ngIf="!productos">
+            Load products list...
+        </div>
+        <div *ngIf="productos">
+            <div class="col-lg-5  col-md-7 col-sm-9 col-xs-12">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th><strong>Id</strong></th>
+                                <th><strong>Name</strong></th>
+                                <th><strong>Description</strong></th>
+                                <th><strong>Price</strong></th>
+                                <th><strong>Image</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let producto of productos;let i=index">
+                                <td>{{producto.id}}</td>
+                                <td>{{producto.nombre}}</td>
+                                <td>{{producto.description}}</td>
+                                <td>{{producto.precio}} €</td>
+                                <td>
+                                    <div *ngIf="producto.imagen; then image else noImage"></div>
+                                    <ng-template #image>
+                                        <img src="http://localhost/curso-angular4-backend/uploads/{{producto.imagen}}" class="img-thumbnail" alt="img-responsive"
+                                            width="100" height="100" />
+                                    </ng-template>
+                                    <ng-template #noImage>
+                                        <img src="https://visionpubli.com/wp-content/uploads/2016/10/no-image.gif" class="img-thumbnail" alt="img-responsive" width="100"
+                                            height="100" />
+                                    </ng-template>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+-->

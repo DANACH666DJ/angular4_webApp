@@ -1,53 +1,48 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container-fluid">
-  <div class="container">
-    <!--Header-->
-    <div class="row">
-      <div class="col-lg-12  col-md-12 col-sm-12 col-xs-12">
-        <header id="header">
-          <h1>
-            Welcome to {{title}}!
-          </h1>
-        </header>
-      </div>
+<div class="container">
+  <!--Header-->
+  <div class="row">
+    <div class="col-lg-12  col-md-12 col-sm-12 col-xs-12">
+      <header id="header">
+        <h1>
+          Welcome to {{title}}!
+        </h1>
+      </header>
     </div>
+  </div>
 
-    <!--Navegation menu-->
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <nav id="nav">
-          <!--Directiva routerLink para ir a cada ruta-->
-          <!--Directiva routerLinkActive para llamar a la clase activado y que se marque cada link al estar en el-->
-          <a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a>
-          <a [routerLink]="['/productos_list']" [routerLinkActive]="['activado']">Productos</a>
-          <a [routerLink]="['/productos_add']" [routerLinkActive]="['activado']">Crear producto</a>
-        </nav>
-      </div>
+  <!--Navegation menu-->
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <nav id="nav">
+        <!--Directiva routerLink para ir a cada ruta-->
+        <!--Directiva routerLinkActive para llamar a la clase activado y que se marque cada link al estar en el-->
+        <a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a>
+        <a [routerLink]="['/productos_list']" [routerLinkActive]="['activado']">Productos</a>
+        <a [routerLink]="['/productos_add']" [routerLinkActive]="['activado']">Crear producto</a>
+      </nav>
     </div>
+  </div>
 
-    <!--Main section-->
-    <div class="row">
-      <div class="col-lg-3 col-md-2 col-sm-1 col-xs-1">
-      </div>
-      <div class="col-lg-6 col-md-8 col-sm-10 col-xs-10">
-        <section id="main">
-          <!--Componente actual-->
-          <!-- Carga dentro de la etiqueta el componente correspondiente a la ruta-->
-          <router-outlet></router-outlet>
-        </section>
-      </div>
-      <div class="col-lg-3 col-md-2 col-sm-1 col-xs-1">
-      </div>
-    </div>
-
-    <!--Footer-->
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <footer id="footer">
-          <p>Página creada por daniel</p>
-        </footer>
-      </div>
+  <!--Main section-->
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <section id="main">
+        <!--Componente actual-->
+        <!-- Carga dentro de la etiqueta el componente correspondiente a la ruta-->
+        <router-outlet></router-outlet>
+      </section>
     </div>
 
   </div>
+
+  <!--Footer-->
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <footer id="footer">
+        <p>Página creada por daniel</p>
+      </footer>
+    </div>
+  </div>
+
 </div>

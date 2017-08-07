@@ -4,3 +4,33 @@ td,th{
     text-align: center;
     color: white;
 }
+
+
+.producto_imagen{
+	height: 200px;
+	margin: 0px auto;
+    display: block;
+    padding: 5%;
+    max-width: 100%;
+    
+}
+
+.thumbnail{
+     box-shadow: 10px 10px 5px #E6E6E6;
+}
+
+.imagen_container{
+    width: 100%;
+    overflow: hidden;
+}
+
+a{
+    margin: 1%;
+}
+
+
+
+
+
+
+
