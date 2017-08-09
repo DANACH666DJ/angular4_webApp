@@ -12,3 +12,16 @@ h1{
     padding: 2%;
     margin-top: 0px;
 }
+.producto_imagen{
+	height: 200px;
+	margin: 0px auto;
+    display: block;
+    padding: 5%;
+    max-width: 100%;
+    
+}
+.thumbnail{
+     box-shadow: 10px 10px 5px #E6E6E6;
+}
+
+

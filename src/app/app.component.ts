@@ -19,4 +19,5 @@ export class AppComponent {
   ngOnInit(){
     console.log("El color es : "+this.header_color);
   }
+
 }

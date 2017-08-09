@@ -10,7 +10,7 @@ export class ErrorComponent{
     public title:string;
 
     constructor(){
-        this.title="La ruta especificada no existe";
+        this.title="The selected page does not exist";
     }
 
     ngOnInit(){

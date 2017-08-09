@@ -56,6 +56,13 @@
             <div class="form-group">
                 <div class="col-lg-11  col-md-11 col-sm-11 col-xs-12">
                     <label>Image:</label>
+                    <div *ngIf="producto.imagen" class="imagen_container">
+                        <img src="http://localhost/curso-angular4-backend/uploads/{{producto.imagen}}" class="producto_imagen img-responsive" alt="img-responsive"
+                        />
+                    </div>
+                    <div *ngIf="!producto.imagen">
+                        <img src="./assets/no-photo.png" class="producto_imagen img-responsive" alt="img-responsive" />
+                    </div>
                     <input type="file" class="form-control" name="imagen" (change)="fileChangeEvent($event)" />
                 </div>
             </div>
