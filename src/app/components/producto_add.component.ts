@@ -23,7 +23,7 @@ export class ProductoAddComponent {
         private _router: Router,
         private _productoService: ProductoService
     ) {
-        this.title = "Crear un nuevo producto";
+        this.title = "Create a new product";
         this.producto = new Producto(0, "", "", 0, "");
     }
 

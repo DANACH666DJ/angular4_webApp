@@ -1,0 +1,14 @@
+::-webkit-input-placeholder {
+   text-align: center;
+}
+label{
+    margin-top: 20px;
+}
+input[type=submit] {
+   margin-top: 20px;
+}
+
+h1{
+    padding: 2%;
+    margin-top: 0px;
+}

@@ -4,6 +4,7 @@
     </div>
     <div *ngIf="productos">
         <div class="row">
+            <h1><strong>{{title}}</strong></h1>
             <div class="col-lg-3" *ngFor="let producto of productos">
                 <div class="thumbnail">
                     <div *ngIf="producto.imagen" class="imagen_container">
@@ -17,8 +18,8 @@
                         <p>{{producto.description}}</p>
                         <p>{{producto.precio}} €</p>
                         <p>
-                            <a href="#" class="btn btn-md btn-info">Ver</a>
-                            <a href="#" class="btn btn-md btn-warning">Editar</a>
+                            <a [routerLink]="['/producto', producto.id]" class="btn btn-md btn-info">Ver</a>
+                            <a [routerLink]="['/producto_edit', producto.id]" class="btn btn-md btn-warning">Editar</a>
                             <a href="#" class="btn btn-md btn-danger">Borrar</a>
                         </p>
                     </div>

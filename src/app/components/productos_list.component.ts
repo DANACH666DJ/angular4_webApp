@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ProductoService } from '../services/producto.service';
 import { Producto } from '../models/producto';
 
+
 @Component({
     selector: 'productos_list',
     templateUrl: '../views/productos_list.component.html',
@@ -19,7 +20,7 @@ export class ProductosListComponent {
         private _router: Router,
         private _productoService: ProductoService
     ) {
-        this.title = "Listado de productos";
+        this.title = "Product List";
         this.productos = [];
     }
 
@@ -40,4 +41,8 @@ export class ProductosListComponent {
             }
         );
     }
+
+
+
+
 }
