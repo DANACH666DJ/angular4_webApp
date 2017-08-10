@@ -14,6 +14,7 @@ import { Producto } from '../models/producto';
 export class ProductosListComponent {
     public title: string;
     public productos: Array<Producto>;
+    public confirmado: number;
 
     constructor(
         private _route: ActivatedRoute,
@@ -22,10 +23,15 @@ export class ProductosListComponent {
     ) {
         this.title = "Product List";
         this.productos = [];
+        this.confirmado = null;
     }
 
     ngOnInit() {
         console.log("Se ha cargado el componente  productos_list.component.ts");
+        this.getProductos();
+    }
+
+    getProductos() {
         this._productoService.getProductos().subscribe(
             result => {
                 if (result.code != 200) {
@@ -40,6 +46,33 @@ export class ProductosListComponent {
                 console.log(errorMessage);
             }
         );
+
+    }
+
+    borrarConfirm(id: number) {
+        this.confirmado = id;
+    }
+
+    cancelarConfirm() {
+        this.confirmado = null;
+    }
+
+
+    deleteProducto(id: number, index: number) {
+        this._productoService.deleteProducto(id).subscribe(
+            response => {
+                if (response.code == 200) {
+                    this.getProductos();
+                    alert("The product " + this.productos[index].nombre + " has been successfully erased");
+                } else {
+                    alert("Error deleting product");
+                }
+            },
+            error => {
+                console.log(<any>error);
+            }
+        );
+
     }
 
 

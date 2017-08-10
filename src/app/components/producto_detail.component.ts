@@ -15,6 +15,7 @@ export class ProductoDetailComponent {
     public title: string;
     public id: number;
     public producto: Producto;
+    public confirmado: number;
 
     constructor(
         private _route: ActivatedRoute,
@@ -24,6 +25,7 @@ export class ProductoDetailComponent {
         this.title = "Product details";
         this.id = 0;
         this.producto = new Producto(0, "", "", 0, "");
+        this.confirmado = null;
     }
 
     ngOnInit() {
@@ -50,6 +52,32 @@ export class ProductoDetailComponent {
                 console.log(errorMessage);
             }
         );
+    }
+
+    borrarConfirm(id: number) {
+        this.confirmado = id;
+    }
+
+    cancelarConfirm() {
+        this.confirmado = null;
+    }
+
+
+    deleteProducto(id: number, index: number) {
+        this._productoService.deleteProducto(id).subscribe(
+            response => {
+                if (response.code == 200) {
+                    alert("The product " + this.producto.nombre + " has been successfully erased");
+                    this._router.navigate(['/productos_list']);
+                } else {
+                    alert("Error deleting product");
+                }
+            },
+            error => {
+                console.log(<any>error);
+            }
+        );
+
     }
 
 
